@@ -12,6 +12,9 @@ var level = 0
 
 for (position, step) in input.enumerated() {
     level = (step == up) ? level+1 : level-1
+    if level == -1 {
+        print("Position : \(position)")
+        break
+    }
 }
 
-print("Answer: \(level)")
