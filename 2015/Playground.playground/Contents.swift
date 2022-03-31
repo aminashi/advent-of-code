@@ -29,15 +29,11 @@ var boxes = """
 1x1x10
 """.split(separator: "\n").map{String($0)}
 
-var paper = 0
+var ribbon = 0
 for box in boxes {
-    let dimensions: Array = box.split(separator: "x").map{Int($0)!}
-    let l: Int = dimensions[0]
-    let w: Int = dimensions[1]
-    let h: Int = dimensions[2]
-    let sides: Array = [l*w, w*h, h*l]
-    let extra: Int = sides.min()!
-    paper += sides.reduce(extra, { x, y in
-        x + 2*y })
+    let dimensions: Array = box.split(separator: "x").map{Int($0)!}.sorted()
+    ribbon += 2*dimensions[0] + 2*dimensions[1] + dimensions.reduce(1, { (a,b) in
+        a * b})
+    
 }
-print(paper)
+print(ribbon)
