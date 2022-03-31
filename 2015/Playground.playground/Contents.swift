@@ -18,3 +18,26 @@ for (position, step) in input.enumerated() {
     }
 }
 
+/**
+2nd  task
+*/
+// 2*l*w + 2*w*h + 2*h*l
+// + the area of the smallest side.
+
+var boxes = """
+2x3x4
+1x1x10
+""".split(separator: "\n").map{String($0)}
+
+var paper = 0
+for box in boxes {
+    let dimensions: Array = box.split(separator: "x").map{Int($0)!}
+    let l: Int = dimensions[0]
+    let w: Int = dimensions[1]
+    let h: Int = dimensions[2]
+    let sides: Array = [l*w, w*h, h*l]
+    let extra: Int = sides.min()!
+    paper += sides.reduce(extra, { x, y in
+        x + 2*y })
+}
+print(paper)
