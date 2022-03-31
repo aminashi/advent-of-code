@@ -1,7 +1,7 @@
 print("Hello, World 🌏")
 
 /**
- First task
+ 1st task
  */
 var up: Character = "("
 var down: Character = ")"
