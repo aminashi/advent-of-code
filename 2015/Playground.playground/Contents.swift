@@ -37,3 +37,59 @@ for box in boxes {
     
 }
 print(ribbon)
+
+/**
+ 3rd task
+ */
+
+
+enum Navigation: Character {
+    case left = "<"
+    case down = "v"
+    case up = "^"
+    case right = ">"
+    
+    func move() -> (x: Int, y: Int) {
+        switch self {
+        case .left:
+            return (-1, 0)
+        case .down:
+            return (0, -1)
+        case .up:
+            return (0, 1)
+        case .right:
+            return (1, 0)
+        }
+    }
+}
+
+struct Coordinates: Hashable {
+    let x: Int
+    let y: Int
+    
+    init(tuple: (x: Int, y: Int)) {
+        x = tuple.x
+        y = tuple.y
+    }
+    
+    init(x: Int, y: Int) {
+        self.x = x
+        self.y = y
+    }
+}
+
+var houses: Dictionary<Coordinates, Int> = [Coordinates(x: 0, y: 0): 1]
+
+var currentPosition = (x: 0, y: 0)
+
+var navigation = "^v^v^v^v^v"
+
+for move in navigation {
+    if let next = Navigation(rawValue: move) {
+        let nextMove = next.move()
+        currentPosition = (currentPosition.x + nextMove.x, currentPosition.y + nextMove.y)
+        houses[Coordinates(tuple: currentPosition)] = 1
+    }
+}
+
+print("Number of visiter houses (at least once): \(houses.count)")
