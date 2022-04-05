@@ -80,15 +80,21 @@ struct Coordinates: Hashable {
 
 var houses: Dictionary<Coordinates, Int> = [Coordinates(x: 0, y: 0): 1]
 
-var currentPosition = (x: 0, y: 0)
+var SantaCurrentPosition = (x: 0, y: 0)
+var RoboSantaCurrentPosition = (x: 0, y: 0)
 
 var navigation = "^v^v^v^v^v"
 
-for move in navigation {
+for (instruction, move) in navigation.enumerated() {
     if let next = Navigation(rawValue: move) {
         let nextMove = next.move()
-        currentPosition = (currentPosition.x + nextMove.x, currentPosition.y + nextMove.y)
-        houses[Coordinates(tuple: currentPosition)] = 1
+        if instruction%2 == 0 {
+            SantaCurrentPosition = (SantaCurrentPosition.x + nextMove.x, SantaCurrentPosition.y + nextMove.y)
+            houses[Coordinates(tuple: SantaCurrentPosition)] = 1
+        } else {
+            RoboSantaCurrentPosition = (RoboSantaCurrentPosition.x + nextMove.x, RoboSantaCurrentPosition.y + nextMove.y)
+            houses[Coordinates(tuple: RoboSantaCurrentPosition)] = 1
+        }
     }
 }
 
