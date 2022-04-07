@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:task4.xcodeproj">
+      location = "self:/Users/agnieszka/zadanie/task4/consoleTasks.xcodeproj">
    </FileRef>
 </Workspace>
