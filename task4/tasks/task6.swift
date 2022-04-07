@@ -11,9 +11,9 @@ enum Instruction: String {
     
     func action(light: Int) -> Int {
         switch self {
-        case .on: return 1
-        case .off: return 0
-        case .toggle: return (light == 0) ? 1 : 0
+        case .on: return light + 1
+        case .off: return light > 0 ? light - 1 : 0
+        case .toggle: return light + 2
         }
     }
 }
