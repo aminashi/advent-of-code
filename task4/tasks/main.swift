@@ -1,3 +1,3 @@
 import Foundation
 
-task52()
+task6()
