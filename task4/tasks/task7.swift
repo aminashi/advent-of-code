@@ -7,16 +7,6 @@ enum Operator: String, CaseIterable {
     case rshift = "RSHIFT"
     case not = "NOT"
     
-    var name: String {
-        switch self {
-        case .and: return "AND"
-        case .or: return "OR"
-        case .lshift: return "LSHIFT"
-        case .rshift: return "RSHIFT"
-        case .not: return "NOT"
-        }
-    }
-    
     func execute(_ equation: [UInt16]) -> UInt16 {
         switch self {
         case .not: return ~equation[0]
@@ -29,8 +19,8 @@ enum Operator: String, CaseIterable {
     
     var separator: String {
         switch self {
-        case .not: return "\(self.name) "
-        default: return " \(self.name) "
+        case .not: return "\(self.rawValue) "
+        default: return " \(self.rawValue) "
         }
     }
 }
@@ -379,60 +369,30 @@ func task7() {
         """.components(separatedBy: "\n").map{ return $0.components(separatedBy: " -> ")}
         
     
-    class Node {
-        var value: String?
-        var data: Operator?
+    struct Element {
         var left: String?
         var right: String?
-     
-        init(data: Operator) {
-            self.data = data
-            self.left = nil
-            self.right = nil
-        }
-        
-        init(value: String) {
-            self.value = value
-            self.data = nil
-            self.left = nil
-            self.right = nil
-        }
-     
-        init(data: Operator?, left: String?, right: String?) {
-            self.data = data
-            self.left = left
-            self.right = right
-            self.value = nil
-        }
+        var operation: Operator?
     }
     
-
-    
-    var splitLines: [[String]] = []
+    var data: [String:Element] = [:]
     for (line) in circuit {
-       var equation = line[0].components(separatedBy: " ")
-       equation.append(line[1])
-       splitLines.append(equation)
-    }
-    
-    
-    var tree: [String : Node] = [:]
-    var lookup: [String : String] = [:]
-    
-    for line in splitLines {
-        if line.count == 4 {
-            var node: Node = Node(data: Operator(rawValue: line[1])!, left: line[0], right: line[2])
-            tree[line[3]] = node
-        } else if line.count == 3 {
-            var node: Node = Node(data: Operator(rawValue: line[0])!, left: nil, right: line[1])
-            tree[line[2]] = node
+        let equation = line[0].components(separatedBy: " ")
+        if equation.count == 3 {
+            if let currentOperation = Operator(rawValue: equation[1]) {
+                data[line[1]] = Element(left: equation[0], right: equation[2], operation: currentOperation)
+            }
+        } else if equation.count == 2 {
+            if let currentOperation = Operator(rawValue: equation[0]) {
+                data[line[1]] = Element(left: nil, right: equation[1], operation: currentOperation)
+            }
         } else {
-            lookup[line[1]] = line[0]
+            data[line[1]] = Element(left: equation[0], right: nil, operation: nil)
+            
         }
     }
-
-    var a = tree["lx"]
-    print(tree)
+    
+    print(data)
     
 //
 //    var elements: [String : UInt16] = [:]
