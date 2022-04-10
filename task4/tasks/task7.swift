@@ -74,11 +74,6 @@ class Task7 {
             return nil
         }
         
-//        if let stringValue = element.left, let value = UInt16(stringValue) {
-//            lookup[wire] = value
-//            return lookup[wire]
-//        }
-        
         var calculation: Calculation = Calculation(left: nil, right: nil, operation: element.operation)
         
         if let left = element.left {
