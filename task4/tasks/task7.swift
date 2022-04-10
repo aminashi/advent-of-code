@@ -66,6 +66,12 @@ class Task7 {
         }
     }
     
+    func override() {
+        var a = find(for: "a")! as NSNumber
+        data["b"] = Element(left: a.stringValue, right: nil, operation: .equal)
+        lookup = [:]
+    }
+    
     var lookup: [String : UInt16] = [:]
     
     func find(for wire: String) -> UInt16? {
