@@ -111,7 +111,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 1150;
-				ORGANIZATIONNAME = "Aga Magiera";
+				ORGANIZATIONNAME = aminashi;
 				TargetAttributes = {
 					8275FA1427FD060500202DA6 = {
 						CreatedOnToolsVersion = 11.5;
