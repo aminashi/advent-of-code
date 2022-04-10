@@ -67,7 +67,7 @@ class Task7 {
     }
     
     func override() {
-        var a = find(for: "a")! as NSNumber
+        let a = find(for: "a")! as NSNumber
         data["b"] = Element(left: a.stringValue, right: nil, operation: .equal)
         lookup = [:]
     }

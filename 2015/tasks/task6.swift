@@ -25,7 +25,7 @@ func task6() {
         repeating: [Int](repeating: 0, count: 1000),
      count: 1000)
     
-    var inputs = """
+    let inputs = """
     turn off 660,55 through 986,197
     turn off 341,304 through 638,850
     turn off 199,133 through 461,193

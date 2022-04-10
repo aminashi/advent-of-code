@@ -12,7 +12,7 @@ func task51() {
     //dvszwmarrgswjxmb is naughty because it contains only one vowel.
 
     var niceStrings = 0
-    var words: [String] = """
+    let words: [String] = """
     ugknbfddgicrmopn
     aaa
     jchzalrnumimnmhp
@@ -20,8 +20,8 @@ func task51() {
     dvszwmarrgswjxmb
     """.components(separatedBy: "\n")
 
-    var vowels = "aeiou"
-    var illegal = ["ab", "cd", "pq", "xy"]
+    let vowels = "aeiou"
+    let illegal = ["ab", "cd", "pq", "xy"]
 
     for word in words {
         var vowelCount = 0
