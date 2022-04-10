@@ -13,6 +13,7 @@
 		8275FA2527FF6C7900202DA6 /* task6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8275FA2427FF6C7900202DA6 /* task6.swift */; };
 		8275FA272801EC0400202DA6 /* task7.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8275FA262801EC0400202DA6 /* task7.swift */; };
 		8275FA292803799100202DA6 /* task1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8275FA282803799100202DA6 /* task1.swift */; };
+		8275FA2B28037A4400202DA6 /* task2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8275FA2A28037A4400202DA6 /* task2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,6 +36,7 @@
 		8275FA2427FF6C7900202DA6 /* task6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = task6.swift; sourceTree = "<group>"; };
 		8275FA262801EC0400202DA6 /* task7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = task7.swift; sourceTree = "<group>"; };
 		8275FA282803799100202DA6 /* task1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = task1.swift; sourceTree = "<group>"; };
+		8275FA2A28037A4400202DA6 /* task2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = task2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				8275FA2427FF6C7900202DA6 /* task6.swift */,
 				8275FA262801EC0400202DA6 /* task7.swift */,
 				8275FA282803799100202DA6 /* task1.swift */,
+				8275FA2A28037A4400202DA6 /* task2.swift */,
 			);
 			path = tasks;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 				8275FA2327FE6B1C00202DA6 /* main.swift in Sources */,
 				8275FA292803799100202DA6 /* task1.swift in Sources */,
 				8275FA2527FF6C7900202DA6 /* task6.swift in Sources */,
+				8275FA2B28037A4400202DA6 /* task2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
