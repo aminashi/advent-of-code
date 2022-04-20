@@ -310,32 +310,21 @@ func task8() {
     
     for line in lines {
         let count = line.utf8.count
-        let ascii = line.replacingOccurrences(
-            of: #"\\x[0-9a-fA-F][0-9a-fA-F]"#,
-            with: "S",
-            options: .regularExpression
-        )
-        
-        let doubleQuote = ascii.replacingOccurrences(
-            of: #"\\\\"#,
-            with: "Q",
+        let doubleQuote = line.replacingOccurrences(
+            of: #"\""#,
+            with: "DD",
             options: .regularExpression
         )
         
         let escaped = doubleQuote.replacingOccurrences(
-            of: #"\\""#,
-            with: "E",
+            of: #"\\"#,
+            with: "BB",
             options: .regularExpression
         )
         
-        let dropQuote = escaped.replacingOccurrences(
-            of: #"\""#,
-            with: "",
-            options: .regularExpression
-        )
-        
-        let countReplaced = dropQuote.utf8.count
-        result += (count - countReplaced)
+        let quoted = "Q\(escaped)Q"
+        let countReplaced = quoted.utf8.count
+        result += (countReplaced - count)
     }
     
     print(result)
