@@ -1,25 +1,43 @@
 import Foundation
 
 func task8() {
-//    Santa's list is a file that contains many double-quoted string literals, one on each line. The only escape sequences used are \\ (which represents a single backslash), \" (which represents a lone double-quote character), and \x plus two hexadecimal characters (which represents a single character with that ASCII code).
     
+    let a = #"""
+"\""
+"\\\""
+"\\\xab"
+"""#
+    print(a)
+
+    let b = a.split(whereSeparator: \.isNewline)
     
-    let a = "aaa\"aaa"
-    let b = #"aaa\"aaa"#
+    var result = 0
     
-    print(a.count)
-    print(b.count+2)
+    for line in b {
+        let count = line.utf8.count
+        print(count)
+        let ascii = line.replacingOccurrences(
+            of: #"\\x.."#,
+            with: "S",
+            options: .regularExpression
+        )
+        
+        let doubleQuote = ascii.replacingOccurrences(
+            of: #"\\\\"#,
+            with: "Q",
+            options: .regularExpression
+        )
+        
+        let escaped = doubleQuote.replacingOccurrences(
+            of: #"\\""#,
+            with: "E",
+            options: .regularExpression
+        )
+        let countReplaced = escaped.utf8.count-2
+        print(countReplaced)
+        result += (count - countReplaced)
+        print(result)
+    }
     
-    let c = "\u{27}"
-    let d = #"\x27"#
-    
-    print(c.count)
-    print(c)
-    print(d.count+2)
-    
-    let e = "byc\u{9d}yxuafof\\\u{a6}uf\\axfozomj\\olh\u{6a}"
-    let f = #"byc\x9dyxuafof\\\xa6uf\\axfozomj\\olh\x6a"#
-    
-    print(e)
-    print(f.count)
+    print(result)
 }
