@@ -349,4 +349,4 @@ he RSHIFT 5 -> hh
 //result = task7.find(for: "a")
 //print(result!)
 
-task8()
+task9()
