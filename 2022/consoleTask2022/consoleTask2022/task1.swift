@@ -35,7 +35,16 @@ func task1(part: Part) {
         }
     }
 
-    if let max = results.max() {
-        print(max)
+    
+    switch part {
+    case .one:
+        if let max = results.max() {
+            print(max)
+        }
+    case .two:
+        results = results.sorted { $0 > $1 }
+        if results.count > 2 {
+            print(results[0] + results[1] + results[2])
+        }
     }
 }
