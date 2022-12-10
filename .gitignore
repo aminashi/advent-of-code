@@ -2,3 +2,5 @@
 2015/.DS_Store
 2015/consoleTasks.xcodeproj
 *.xcuserstate
+*.xcworkspace
+xcuserdata
