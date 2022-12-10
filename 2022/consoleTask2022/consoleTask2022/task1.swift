@@ -1,6 +1,11 @@
 import Foundation
 
-func task1() {
+enum Part {
+    case one
+    case two
+}
+
+func task1(part: Part) {
     let input = """
     1000
     2000
