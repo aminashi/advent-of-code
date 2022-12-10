@@ -60,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				82E86C782944FF480088FA7E /* main.swift */,
+				82E86C7F2944FF670088FA7E /* task1.swift */,
 			);
 			path = consoleTask2022;
 			sourceTree = "<group>";
@@ -122,6 +123,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82E86C802944FF670088FA7E /* task1.swift in Sources */,
 				82E86C792944FF480088FA7E /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
