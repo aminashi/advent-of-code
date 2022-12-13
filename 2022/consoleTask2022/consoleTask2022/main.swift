@@ -1,3 +1,3 @@
 import Foundation
 
-task4()
+task4(part: .two)
