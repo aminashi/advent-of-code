@@ -11,6 +11,7 @@
 		82E86C802944FF670088FA7E /* task1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E86C7F2944FF670088FA7E /* task1.swift */; };
 		82E86C8229450AE00088FA7E /* task2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E86C8129450AE00088FA7E /* task2.swift */; };
 		82E86C84294518E20088FA7E /* task3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E86C83294518E20088FA7E /* task3.swift */; };
+		82E86C862947B4D70088FA7E /* task4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E86C852947B4D70088FA7E /* task4.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,7 @@
 		82E86C7F2944FF670088FA7E /* task1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = task1.swift; sourceTree = "<group>"; };
 		82E86C8129450AE00088FA7E /* task2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = task2.swift; sourceTree = "<group>"; };
 		82E86C83294518E20088FA7E /* task3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = task3.swift; sourceTree = "<group>"; };
+		82E86C852947B4D70088FA7E /* task4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = task4.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				82E86C7F2944FF670088FA7E /* task1.swift */,
 				82E86C8129450AE00088FA7E /* task2.swift */,
 				82E86C83294518E20088FA7E /* task3.swift */,
+				82E86C852947B4D70088FA7E /* task4.swift */,
 			);
 			path = consoleTask2022;
 			sourceTree = "<group>";
@@ -131,6 +134,7 @@
 			files = (
 				82E86C84294518E20088FA7E /* task3.swift in Sources */,
 				82E86C802944FF670088FA7E /* task1.swift in Sources */,
+				82E86C862947B4D70088FA7E /* task4.swift in Sources */,
 				82E86C8229450AE00088FA7E /* task2.swift in Sources */,
 				82E86C792944FF480088FA7E /* main.swift in Sources */,
 			);
@@ -189,13 +193,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -243,12 +248,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
