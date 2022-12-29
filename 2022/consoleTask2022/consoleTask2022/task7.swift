@@ -113,5 +113,33 @@ func task7() {
             }
         }
     }
+    updateSize(directory: structure!)
+    print(findDirectories(directory: structure!))
 }
+
+func findDirectories(directory: Directory) -> Int {
+    var size = 0
+    
+    directory.elements.forEach({ element in
+        if let element = element as? Directory {
+            size += findDirectories(directory: element)
+            if element.size <= 100000 {
+                size += element.size
+            }
+        }
+    })
+    
+    return size
+}
+
+func updateSize(directory: Directory) {
+        
+    var size = 0
+    directory.elements.forEach({ element in
+        if let element = element as? Directory {
+            updateSize(directory: element)
+        }
+        size += element.size
+    })
+    directory.size = size
 }
