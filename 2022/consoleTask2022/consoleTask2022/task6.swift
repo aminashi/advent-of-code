@@ -1,6 +1,6 @@
 import Foundation
 
-func task6() {
+func task6(part: Part) {
     
     let input = """
     mjqjpqmgbljsphdztnvjfqwrcgsmlb
@@ -10,18 +10,18 @@ func task6() {
     zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw
     """.components(separatedBy: "\n")
 
-    let windowSize = 4
+    let windowSize = (part == .one) ? 4 : 14
     
     for line in input {
         var loopCount = 0
         var uniqueLetters: Set = Set<Character>()
-        while uniqueLetters.count != 4 {
+        while uniqueLetters.count != windowSize {
             let startIndex = line.index(line.startIndex, offsetBy: loopCount)
             let endIndex = line.index(line.startIndex, offsetBy: windowSize + loopCount - 1)
-            var window = String(line[startIndex...endIndex])
+            let window = String(line[startIndex...endIndex])
             uniqueLetters = Set(window)
             loopCount += 1
         }
-        print(loopCount+3)
+        print(loopCount + windowSize-1)
     }
 }
