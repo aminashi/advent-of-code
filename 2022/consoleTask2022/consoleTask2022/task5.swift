@@ -1,6 +1,6 @@
 import Foundation
 
-func task5() {
+func task5(part: Part) {
     
     let input = """
         [D]
@@ -27,8 +27,7 @@ func task5() {
     var crates: [Int:[String]] = [:]
     
     for line in cratesString.reversed() {
-        let start = line.startIndex
-        var offset = 4
+        let offset = 4
         var loopCount = 0
         while loopCount * offset <= lineSize {
             var value = "   "
@@ -52,14 +51,21 @@ func task5() {
     
     let instructions = input[1].components(separatedBy: "\n")
     let regex2 = /move (\d+) from (\d+) to (\d+)/
-    
+
     for instructionString in instructions {
         if let instruction = instructionString.wholeMatch(of: regex2) {
             if let howMany = Int(instruction.1), let from = Int(instruction.2), let to = Int(instruction.3) {
-                for _ in 1...howMany {
-                    if let value = crates[from]?.popLast() {
-                        crates[to]?.append(value)
+                switch part {
+                case .one:
+                    for _ in 1...howMany {
+                        if let value = crates[from]?.popLast() {
+                            crates[to]?.append(value)
+                        }
                     }
+                case .two:
+                    guard let subsequence = crates[from]?.suffix(howMany) else { return }
+                    crates[to]?.append(contentsOf: subsequence)
+                    crates[from]?.removeLast(howMany)
                 }
             }
             print(crates)
