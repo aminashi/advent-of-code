@@ -103,6 +103,15 @@ func task7() {
                 pointing = pointing?.parent
             }
         } else {
+            let elementData = line.components(separatedBy: " ")
+            if elementData[0] == "dir" {
+                let directory = Directory(name: elementData[1], parent: pointing)
+                pointing?.elements.append(directory)
+            } else {
+                let file = File(name: elementData[1], size: Int(elementData[0])!)
+                pointing?.elements.append(file)
+            }
+        }
     }
 }
 }
