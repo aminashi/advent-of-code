@@ -51,7 +51,7 @@ func task5() {
     }
     
     let instructions = input[1].components(separatedBy: "\n")
-    let regex2 = /move (\d) from (\d) to (\d)/
+    let regex2 = /move (\d+) from (\d+) to (\d+)/
     
     for instructionString in instructions {
         if let instruction = instructionString.wholeMatch(of: regex2) {
@@ -65,5 +65,15 @@ func task5() {
             print(crates)
         }
     }
+    
+    var result: String = String(repeating: " ", count: crates.count)
+    
+    for key in crates.keys {
+        if let crate = crates[key]?.popLast(), let letter = crate.firstMatch(of: /\[(\w)\]/) {
+            let index = result.index(result.startIndex, offsetBy: key-1)
+            result.replaceSubrange(index...index, with: letter.output.1)
+        }
+    }
+    print(result)
     
 }
