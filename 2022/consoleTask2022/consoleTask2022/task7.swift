@@ -54,7 +54,7 @@ class File: Element {
     }
 }
 
-func task7() {
+func task7(part: Part) {
     
     var structure: Directory? = nil
     var pointing: Directory? = nil
@@ -113,8 +113,18 @@ func task7() {
             }
         }
     }
+    
     updateSize(directory: structure!)
-    print(findDirectories(directory: structure!))
+    
+    if part == .one {
+        print(findDirectories(directory: structure!))
+    } else {
+        let freeSpace = 70000000 - structure!.size
+        if freeSpace < 30000000 {
+            print(findDirectorySizeToRemove(directory: structure!, freeSpace: freeSpace))
+        }
+    }
+    
 }
 
 func findDirectories(directory: Directory) -> Int {
@@ -130,6 +140,23 @@ func findDirectories(directory: Directory) -> Int {
     })
     
     return size
+}
+
+func findDirectorySizeToRemove(directory: Directory, freeSpace: Int) -> Int {
+    var maxSize: Int = 70000000
+    
+    directory.elements.forEach({ element in
+        if let element = element as? Directory {
+            let nestedSize = findDirectorySizeToRemove(directory: element, freeSpace: freeSpace)
+            if freeSpace + nestedSize >= 30000000 && nestedSize < maxSize {
+                maxSize = nestedSize
+            } else if freeSpace + element.size >= 30000000 && element.size < maxSize {
+                maxSize = element.size
+            }
+        }
+    })
+    
+    return maxSize
 }
 
 func updateSize(directory: Directory) {
