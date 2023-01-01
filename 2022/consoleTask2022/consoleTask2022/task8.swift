@@ -24,8 +24,21 @@ func task8() {
                 continue
             }
             
+            var directions: [Direction : Bool] = [
+                .left   : false,
+                .right  : false,
+                .top    : false,
+                .bottom : false
+            ]
+            
+            for direction in directions.keys {
+                directions[direction] = checkTreesInLine(direction: direction, grid: grid, coordinates: (row: rowIndex, column: columnIndex), tree: tree)
+            }
+            
+            if directions.values.reduce(false, { x, y in
+                x || y
+            }) == true {
                 visibleTrees += 1
-                print("\(rowIndex), \(columnIndex), \(tree), \(row[columnIndex - 1] < tree) \(row[columnIndex + 1] < tree) \(grid[rowIndex-1][columnIndex] < tree) \(grid[rowIndex+1][columnIndex] < tree)")
             }
             
         }
@@ -34,6 +47,38 @@ func task8() {
     print(visibleTrees)
 }
 
+func checkTreesInLine(direction: Direction, grid: [[Int]], coordinates: (row: Int, column: Int), tree: Int) -> Bool {
+    var visible: Bool = true
+    
+    if ({
+        switch direction {
+        case .left: return coordinates.row > 0
+        case .right: return coordinates.row < grid.count - 1
+        case .top: return coordinates.column > 0
+        case .bottom: return coordinates.column < grid.count - 1
+        }
+    }()) {
+        visible = grid[coordinates.row + direction.row()][coordinates.column + direction.column()] < tree
+        
+        visible = visible && checkTreesInLine(direction: direction, grid: grid, coordinates: (row: coordinates.row + direction.row(), column: coordinates.column + direction.column()), tree: tree)
+    }
+    
+    return visible
+}
+
+
+enum Direction {
+    case left
+    case right
+    case top
+    case bottom
+    
+    func row() -> Int {
+        switch self {
+        case .left: return -1
+        case .right: return 1
+        default: return 0
+        }
     }
     
     func column() -> Int {
