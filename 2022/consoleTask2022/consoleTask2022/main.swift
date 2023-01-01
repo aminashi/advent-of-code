@@ -1,3 +1,3 @@
 import Foundation
 
-task8()
+Advent().task(number: .one, part: .first)
