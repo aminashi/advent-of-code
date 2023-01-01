@@ -24,20 +24,13 @@ func task8() {
                 continue
             }
             
-            var directions: [Direction : Bool] = [
-                .left   : false,
-                .right  : false,
-                .top    : false,
-                .bottom : false
-            ]
+            var visibilityFromTree = false
             
-            for direction in directions.keys {
-                directions[direction] = checkTreesInLine(direction: direction, grid: grid, coordinates: (row: rowIndex, column: columnIndex), tree: tree)
+            for direction in Direction.allCases {
+                visibilityFromTree = visibilityFromTree || checkTreesInLine(direction: direction, grid: grid, coordinates: (row: rowIndex, column: columnIndex), tree: tree)
             }
             
-            if directions.values.reduce(false, { x, y in
-                x || y
-            }) == true {
+            if visibilityFromTree {
                 visibleTrees += 1
             }
             
@@ -67,7 +60,7 @@ func checkTreesInLine(direction: Direction, grid: [[Int]], coordinates: (row: In
 }
 
 
-enum Direction {
+enum Direction: CaseIterable {
     case left
     case right
     case top
