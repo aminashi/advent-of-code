@@ -11,6 +11,7 @@
 		826C8E37295E14D900A1FA56 /* task6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826C8E36295E14D900A1FA56 /* task6.swift */; };
 		826C8E39295E3A7F00A1FA56 /* task7.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826C8E38295E3A7F00A1FA56 /* task7.swift */; };
 		826C8E3B295EFEBD00A1FA56 /* task8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826C8E3A295EFEBD00A1FA56 /* task8.swift */; };
+		826C8E3D2961ECD400A1FA56 /* advent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826C8E3C2961ECD400A1FA56 /* advent.swift */; };
 		82E86C792944FF480088FA7E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E86C782944FF480088FA7E /* main.swift */; };
 		82E86C802944FF670088FA7E /* task1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E86C7F2944FF670088FA7E /* task1.swift */; };
 		82E86C8229450AE00088FA7E /* task2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E86C8129450AE00088FA7E /* task2.swift */; };
@@ -35,6 +36,7 @@
 		826C8E36295E14D900A1FA56 /* task6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = task6.swift; sourceTree = "<group>"; };
 		826C8E38295E3A7F00A1FA56 /* task7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = task7.swift; sourceTree = "<group>"; };
 		826C8E3A295EFEBD00A1FA56 /* task8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = task8.swift; sourceTree = "<group>"; };
+		826C8E3C2961ECD400A1FA56 /* advent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = advent.swift; sourceTree = "<group>"; };
 		82E86C752944FF480088FA7E /* consoleTask2022 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = consoleTask2022; sourceTree = BUILT_PRODUCTS_DIR; };
 		82E86C782944FF480088FA7E /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		82E86C7F2944FF670088FA7E /* task1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = task1.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				82E86C782944FF480088FA7E /* main.swift */,
+				826C8E3C2961ECD400A1FA56 /* advent.swift */,
 				82E86C7F2944FF670088FA7E /* task1.swift */,
 				82E86C8129450AE00088FA7E /* task2.swift */,
 				82E86C83294518E20088FA7E /* task3.swift */,
@@ -153,6 +156,7 @@
 				826C8E3B295EFEBD00A1FA56 /* task8.swift in Sources */,
 				826C8E37295E14D900A1FA56 /* task6.swift in Sources */,
 				82E86C792944FF480088FA7E /* main.swift in Sources */,
+				826C8E3D2961ECD400A1FA56 /* advent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
