@@ -2,13 +2,7 @@ import Foundation
 
 extension Advent {
     func task6(part: Part) {
-        let input = """
-        mjqjpqmgbljsphdztnvjfqwrcgsmlb
-        bvwbjplbgvbhsrlpgdmjqwftvncz
-        nppdvjthqldpwncqszvftbrmjlhg
-        nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg
-        zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw
-        """.components(separatedBy: "\n")
+        let input = Number.six.input.components(separatedBy: "\n")
         
         let windowSize = (part == .first) ? 4 : 14
         

@@ -2,22 +2,7 @@ import Foundation
 
 extension Advent {
     func task1(part: Part) {
-        let input = """
-        1000
-        2000
-        3000
-
-        4000
-
-        5000
-        6000
-
-        7000
-        8000
-        9000
-
-        10000
-        """.components(separatedBy: "\n")
+        let input = Number.one.input.components(separatedBy: "\n")
         
         var results: [Int] = [0]
         var index: Int = 0

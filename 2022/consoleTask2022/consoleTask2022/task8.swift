@@ -25,14 +25,7 @@ extension Advent {
     }
     
     func task8(part: Part) {
-        
-        let grid: [[Int]] = """
-        30373
-        25512
-        65332
-        33549
-        35390
-        """.components(separatedBy: "\n").map{ line in
+        let grid: [[Int]] = Number.eight.input.components(separatedBy: "\n").map{ line in
             line.compactMap({ Int(String($0)) })
         }
         

@@ -34,3 +34,98 @@ public class Advent: AdventProtocol {
         }
     }
 }
+
+extension Number {
+    var input: String {
+        switch self {
+        case .one: return """
+        1000
+        2000
+        3000
+
+        4000
+
+        5000
+        6000
+
+        7000
+        8000
+        9000
+
+        10000
+        """
+        case .two: return """
+        A Y
+        B X
+        C Z
+        """
+        case .three: return """
+        vJrwpWtwJgWrhcsFMMfFFhFp
+        jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL
+        PmmdzqPrVvPwwTWBwg
+        wMqvLMZHhHMvwLHjbvcjnnSBnvTQFn
+        ttgJtRGJQctTZtZT
+        CrZsJsPPZsGzwwsLwLmpwMDw
+        """
+        case .four: return """
+        2-4,6-8
+        2-3,4-5
+        5-7,7-9
+        2-8,3-7
+        6-6,4-6
+        2-6,4-8
+        """
+        case .five: return """
+            [D]
+        [N] [C]
+        [Z] [M] [P]
+         1   2   3
+        
+        move 1 from 2 to 1
+        move 3 from 1 to 3
+        move 2 from 2 to 1
+        move 1 from 1 to 2
+        """
+        case .six: return """
+        mjqjpqmgbljsphdztnvjfqwrcgsmlb
+        bvwbjplbgvbhsrlpgdmjqwftvncz
+        nppdvjthqldpwncqszvftbrmjlhg
+        nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg
+        zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw
+        """
+        case .seven: return """
+        $ cd /
+        $ ls
+        dir a
+        14848514 b.txt
+        8504156 c.dat
+        dir d
+        $ cd a
+        $ ls
+        dir e
+        29116 f
+        2557 g
+        62596 h.lst
+        $ cd e
+        $ ls
+        584 i
+        $ cd ..
+        $ cd ..
+        $ cd d
+        $ ls
+        4060174 j
+        8033020 d.log
+        5626152 d.ext
+        7214296 k
+        """
+        case .eight: return """
+        30373
+        25512
+        65332
+        33549
+        35390
+        """
+        default: return ""
+        }
+    }
+}

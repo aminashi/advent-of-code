@@ -83,11 +83,7 @@ extension Advent {
     }
     
     func task2(part: Part) {
-        let input = """
-        A Y
-        B X
-        C Z
-        """.components(separatedBy: "\n")
+        let input = Number.two.input.components(separatedBy: "\n")
         
         switch part {
         case .first:

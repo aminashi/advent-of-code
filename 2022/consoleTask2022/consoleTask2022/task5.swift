@@ -2,17 +2,7 @@ import Foundation
 
 extension Advent {
     func task5(part: Part) {
-        let input = """
-            [D]
-        [N] [C]
-        [Z] [M] [P]
-         1   2   3
-        
-        move 1 from 2 to 1
-        move 3 from 1 to 3
-        move 2 from 2 to 1
-        move 1 from 1 to 2
-        """.components(separatedBy: "\n\n")
+        let input = Number.five.input.components(separatedBy: "\n\n")
         
         var cratesString = input[0].components(separatedBy: "\n")
         

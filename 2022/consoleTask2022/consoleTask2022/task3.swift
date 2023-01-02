@@ -2,14 +2,7 @@ import Foundation
 
 extension Advent {
     func task3(part: Part) {
-        let input = """
-        vJrwpWtwJgWrhcsFMMfFFhFp
-        jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL
-        PmmdzqPrVvPwwTWBwg
-        wMqvLMZHhHMvwLHjbvcjnnSBnvTQFn
-        ttgJtRGJQctTZtZT
-        CrZsJsPPZsGzwwsLwLmpwMDw
-        """.components(separatedBy: "\n")
+        let input = Number.three.input.components(separatedBy: "\n")
         
         var priorityScore: Int = 0
         
