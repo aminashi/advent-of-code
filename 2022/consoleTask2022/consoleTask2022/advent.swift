@@ -14,6 +14,7 @@ public enum Number: CaseIterable {
     case six
     case seven
     case eight
+    case nine
 }
 
 public protocol AdventProtocol {
@@ -31,6 +32,7 @@ public class Advent: AdventProtocol {
         case .six: return task6(part: part)
         case .seven: return task7(part: part)
         case .eight: return task8(part: part)
+        case .nine: return task9(part: part)
         }
     }
 }
@@ -124,6 +126,16 @@ extension Number {
         65332
         33549
         35390
+        """
+        case .nine: return """
+        R 4
+        U 4
+        L 3
+        D 1
+        R 4
+        D 1
+        L 5
+        R 2
         """
         default: return ""
         }
