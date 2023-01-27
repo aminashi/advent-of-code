@@ -4,22 +4,26 @@ extension Advent {
     func task9(part: Part) {
         let input = Number.nine.input.components(separatedBy: "\n")
         
-        var headPosition: Point = Point(x: 0, y: 0)
-        var tailPosition: Point = Point(x: 0, y: 0)
-        var tailPath: [Point: Bool] = [Point(x: 0, y: 0) : true]
-        
-        for line in input {
-            let instruction = line.components(separatedBy: " ")
-            if let direction = Instruction(rawValue: instruction[0]), let steps = Int(instruction[1]) {
-                for _ in 0...steps-1 {
-                    var newHeadPosition = headPosition.move(to: direction)
-                    if (!tailPosition.isInRange(of: newHeadPosition)) {
-                        tailPosition = headPosition
-                        tailPath[tailPosition] = true
+        if case part: Part = .first {
+            var headPosition: Point = Point(x: 0, y: 0)
+            var tailPosition: Point = Point(x: 0, y: 0)
+            var tailPath: [Point: Bool] = [Point(x: 0, y: 0) : true]
+            
+            for line in input {
+                let instruction = line.components(separatedBy: " ")
+                if let direction = Instruction(rawValue: instruction[0]), let steps = Int(instruction[1]) {
+                    for _ in 0...steps-1 {
+                        var newHeadPosition = headPosition.move(to: direction)
+                        if (!tailPosition.isInRange(of: newHeadPosition)) {
+                            tailPosition = headPosition
+                            tailPath[tailPosition] = true
+                        }
+                        headPosition = newHeadPosition
                     }
-                    headPosition = newHeadPosition
                 }
             }
+            
+            print(tailPath.count)
         }
     }
 }
