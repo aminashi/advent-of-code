@@ -21,7 +21,7 @@ extension Advent {
                 let instruction = line.components(separatedBy: " ")
                 if let direction = Instruction(rawValue: instruction[0]), let steps = Int(instruction[1]) {
                     for _ in 0...steps-1 {
-                        var newHeadPosition = headPosition.move(to: direction)
+                        let newHeadPosition = headPosition.move(to: direction)
                         if (!tailPosition.isInRange(of: newHeadPosition)) {
                             tailPosition = headPosition
                             tailPath[tailPosition] = true
