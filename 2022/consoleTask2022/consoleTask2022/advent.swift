@@ -15,6 +15,7 @@ public enum Number: CaseIterable {
     case seven
     case eight
     case nine
+    case ten
 }
 
 public protocol AdventProtocol {
@@ -24,7 +25,7 @@ public protocol AdventProtocol {
 public class Advent: AdventProtocol {
     public func task(number: Number, part: Part) {
         switch number {
-            case .one: return task1(part: part)
+        case .one: return task1(part: part)
         case .two: return task2(part: part)
         case .three: return task3(part: part)
         case .four: return task4(part: part)
@@ -33,6 +34,7 @@ public class Advent: AdventProtocol {
         case .seven: return task7(part: part)
         case .eight: return task8(part: part)
         case .nine: return task9(part: part)
+        case .ten: return task10(part: part)
         }
     }
 }

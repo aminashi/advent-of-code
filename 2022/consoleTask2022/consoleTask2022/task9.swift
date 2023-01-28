@@ -1,6 +1,14 @@
 import Foundation
 
 extension Advent {
+    
+    enum Instruction: String {
+        case R
+        case L
+        case U
+        case D
+    }
+    
     func task9(part: Part) {
         let input = Number.nine.input.components(separatedBy: "\n")
         
@@ -59,54 +67,48 @@ extension Advent {
             }
         }
     }
-}
-
-enum Instruction: String {
-    case R
-    case L
-    case U
-    case D
-}
-
-struct Point: Hashable {
-    var x: Int
-    var y: Int
     
-    func move(to direction: Instruction) -> Point {
-        switch direction {
-        case .D: return Point(x: self.x - 1, y: self.y)
-        case .U: return Point(x: self.x + 1, y: self.y)
-        case .L: return Point(x: self.x, y: self.y - 1)
-        case .R: return Point(x: self.x, y: self.y + 1)
-        }
-    }
-    
-    mutating func moveCloser(to point: Point) {
-        if point.x - self.x > 0 {
-            self.x += 1
-        } else if point.x - self.x < 0 {
-            self.x -= 1
+    struct Point: Hashable {
+        var x: Int
+        var y: Int
+        
+        func move(to direction: Instruction) -> Point {
+            switch direction {
+            case .D: return Point(x: self.x - 1, y: self.y)
+            case .U: return Point(x: self.x + 1, y: self.y)
+            case .L: return Point(x: self.x, y: self.y - 1)
+            case .R: return Point(x: self.x, y: self.y + 1)
+            }
         }
         
-        if point.y - self.y > 0 {
-            self.y += 1
-        } else if point.y - self.y < 0 {
-            self.y -= 1
+        mutating func moveCloser(to point: Point) {
+            if point.x - self.x > 0 {
+                self.x += 1
+            } else if point.x - self.x < 0 {
+                self.x -= 1
+            }
+            
+            if point.y - self.y > 0 {
+                self.y += 1
+            } else if point.y - self.y < 0 {
+                self.y -= 1
+            }
         }
-    }
-    
-    func isInRange(of point: Point) -> Bool {
-        if (point.x - self.x)*(point.x - self.x) > 1 || (point.y - self.y)*(point.y - self.y) > 1 {
-            return false
-        }
-        return true
-    }
-    
-    func isDiagonal(from point: Point) -> Bool {
-        if (point.x - self.x)*(point.x - self.x) == 1 && (point.y - self.y)*(point.y - self.y) == 1 {
+        
+        func isInRange(of point: Point) -> Bool {
+            if (point.x - self.x)*(point.x - self.x) > 1 || (point.y - self.y)*(point.y - self.y) > 1 {
+                return false
+            }
             return true
         }
-        return false
+        
+        func isDiagonal(from point: Point) -> Bool {
+            if (point.x - self.x)*(point.x - self.x) == 1 && (point.y - self.y)*(point.y - self.y) == 1 {
+                return true
+            }
+            return false
+        }
     }
-}
 
+
+}
